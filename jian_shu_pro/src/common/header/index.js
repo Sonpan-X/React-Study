@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ActionCreator } from './store/';
 import { CSSTransition } from 'react-transition-group';
@@ -25,9 +26,13 @@ class Header extends Component {
       <HeaderWrapper>
         <Logo />
         <Nav>
-          <NavItem className="left active">首页</NavItem>
+          <Link to='/'>
+            <NavItem className="left active">首页</NavItem>
+          </Link>
           <NavItem className="left">下载App</NavItem>
+          <Link to='/login'>
           <NavItem className="right">登录</NavItem>
+          </Link>
           <NavItem className="right"><i className="iconfont">&#xe636;</i></NavItem>
           <SearchWrapper>
             <CSSTransition
@@ -35,7 +40,7 @@ class Header extends Component {
               timeout={200}
               classNames="slide"
             >
-              <NavSearch onFocus={()=>{handleFocused(list)}} onBlur={handleInputBlur} className={focused ? 'focused' : ''}>
+              <NavSearch onFocus={() => { handleFocused(list) }} onBlur={handleInputBlur} className={focused ? 'focused' : ''}>
               </NavSearch>
             </CSSTransition>
             <i className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}>&#xe62d;</i>
@@ -44,8 +49,12 @@ class Header extends Component {
 
         </Nav>
         <Addition>
-          <Button className="writting"><i className="iconfont">&#xe62e;</i>写文章</Button>
-          <Button className="reg">注册</Button>
+          <Link to='/write'>
+            <Button className="writting"><i className="iconfont">&#xe62e;</i>写文章</Button>
+          </Link>
+          <Link to='/register'>
+            <Button className="reg">注册</Button>
+          </Link>
         </Addition>
       </HeaderWrapper>
     </div>)
@@ -70,9 +79,9 @@ class Header extends Component {
           <SearchInfoTitle>
             热门搜索
          <SearchInfoSwitch
-              onClick={() => { changePage(page, totalPage,this.spinIcon) }}
+              onClick={() => { changePage(page, totalPage, this.spinIcon) }}
             >
-              <i ref = {(icon)=>{this.spinIcon=icon}} className={'iconfont spin'}>&#xe851;</i>
+              <i ref={(icon) => { this.spinIcon = icon }} className={'iconfont spin'}>&#xe851;</i>
               换一批
            </SearchInfoSwitch>
           </SearchInfoTitle>
@@ -97,7 +106,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispathToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     handleFocused(list) {
       (list.size === 0) && dispatch(ActionCreator.getListChange());
@@ -113,11 +122,11 @@ const mapDispathToProps = (dispatch) => {
       dispatch(ActionCreator.getMouseLeaveAction());
     },
     changePage(page, totalPage, spin) {
-      let originAngle = spin.style.transform.replace(/[^0-9]/ig,'');
-      if(originAngle){
-        originAngle = parseInt(originAngle,10) + 360;
-       
-      }else{
+      let originAngle = spin.style.transform.replace(/[^0-9]/ig, '');
+      if (originAngle) {
+        originAngle = parseInt(originAngle, 10) + 360;
+
+      } else {
         originAngle = 360;
       }
       spin.style.transform = `rotate(${originAngle}deg)`;
@@ -131,4 +140,4 @@ const mapDispathToProps = (dispatch) => {
 
 }
 
-export default connect(mapStateToProps, mapDispathToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

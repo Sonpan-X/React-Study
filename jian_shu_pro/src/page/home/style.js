@@ -50,46 +50,34 @@ border-radius:4px;
 }
 `
 
-export const ArticleWrapper = styled.div`
-width:625px;
-`
+export const ListItem = styled.div`
+	overflow: hidden;
+	padding: 20px 0;
+	border-bottom: 1px solid #dcdcdc;
+	.pic {
+		display: block;
+		width: 125px;
+		height: 100px;
+		float: right;
+		border-radius: 10px;
+	}
+`;
 
-export const ArticleItem = styled.div`
-position:relative;
-margin: 0 0 15px;
-padding: 15px 2px 20px 0;
-width:625px;
-border-bottom: 1px solid #ddd; 
-word-wrap: break-word;
-.article-img{
-  position:absolute;
-  top:50%;
-  margin-top:-60px;
-  right:0;
-  height:100px;
-  width:150px;
-  height:100px;
-}
-`
-
-export const ArticleLeft = styled.div`
-width:458px;
-height:107px;
-.title{
-  margin: -7px 0 4px;
-  display: inherit;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.5;
-  cursor: pointer;
-}
-.dec{
-  margin: 0 0 8px;
-  font-size: 13px;
-  line-height: 24px;
-  color: #999;
-}
-`
+export const ListInfo =	styled.div`
+	width: 500px;
+	float: left;
+	.title {
+		line-height: 27px;
+		font-size: 18px;
+		font-weight: bold;
+		color: #333;
+	}
+	.desc {
+		line-height: 24px;
+		font-size: 13px;
+		color: #999;
+	}
+`;
 
 export const RecommendWrapper = styled.div`
 margin-top: -4px;
@@ -166,14 +154,26 @@ line-height: 20px;
   color: #969696;
 }
 `
-export const LeadMore =styled.div`
-width:100%;
-height:40px;
-line-height:40px;
-margin:30px auto;
-text-align:center;
-background:#a5a5a5;
-border-radius:20px;
-color:#fff;
-cursor:pointer;
+export const LoadMore = styled.div`
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	margin: 30px 0;
+	background: #a5a5a5;
+	text-align:center;
+	border-radius: 20px;
+	color: #fff;
+	cursor: pointer;
+`;
+
+export const BackTop = styled.div`
+	position: fixed;
+	right: 100px;
+	bottom: 100px;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	border: 1px solid #ccc;
+	font-size: 14px;
 `
