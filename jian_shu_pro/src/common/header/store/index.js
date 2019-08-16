@@ -1,5 +1,5 @@
 import reducer from './reducer';
-import * as ActionCreator from './actionCreator';
+import * as actionCreators from './actionCreators';
 import * as constants from './constants';
 
-export { reducer, constants, ActionCreator };
+export { reducer, actionCreators, constants };
