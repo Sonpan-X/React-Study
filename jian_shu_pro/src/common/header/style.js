@@ -4,7 +4,6 @@ import logoPic from '../../statics/logo.png';
 export const HeaderWrapper = styled.div`
 	z-index: 1;
 	display:flex;
-  overflow:hidden;
 	height: 56px;
 	border-bottom: 1px solid #f0f0f0;
 `;
@@ -16,7 +15,6 @@ export const Logo = styled.img.attrs({src:`${logoPic}`})`
 
 export const Nav = styled.div`
 	display:flex;
-	width: 50%;
 	height: 100%;
 	box-sizing: border-box;
 	margin: 0 auto;
@@ -37,10 +35,11 @@ export const NavItem = styled.div`
 `;
 
 export const SearchWrapper = styled.div`
+	position:relative;
 	.zoom {
 		position: absolute;
 		right: 5px;
-		bottom: 5px;
+		top: 13px;
 		width: 30px;
 		line-height: 30px;
 		border-radius: 15px;
@@ -50,17 +49,6 @@ export const SearchWrapper = styled.div`
 			color: #fff;
 		}
 	}
-	&:after{
-		content:&#xe614;
-		width: 30px;
-		height: 30px;
-		line-height: 30px;
-		border-radius: 15px;
-		text-align: center;
-		&.focused {
-			background: #777;
-			color: #fff;
-		}}
 `;
 
 export const NavSearch = styled.input.attrs({
@@ -149,21 +137,19 @@ export const SearchInfoItem = styled.a`
 `;
 
 export const Addition = styled.div`
-	position: absolute;
-	right: 0;
-	top: 0;
+	display:flex;
 	height: 56px;
+	min-width:274px;
 `;
 
 export const Button = styled.div`
-	float: right;
 	margin-top: 9px;
-	margin-right: 20px;
 	padding: 0 20px;
 	line-height: 38px;
 	border-radius: 19px;
 	border: 1px solid #ec6149;
-	font-siz: 14px;
+	margin-right: 20px;
+	font-size: 14px;
 	&.reg {
 		color: #ec6149;
 	}

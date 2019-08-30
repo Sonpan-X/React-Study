@@ -1,18 +1,22 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { DetailWrapper, Header, Content } from './style';
+import Header from '../../common/header';
+import { DetailWrapper, Headers, Content } from './style';
 import { actionCreators } from './store';
 
 class Detail extends PureComponent {
 	render() {
 		return (
+			<div>
+			<Header />
 			<DetailWrapper>
-				<Header>{this.props.title}</Header>
+				<Headers>{this.props.title}</Headers>
 				<Content 
 					dangerouslySetInnerHTML={{__html: this.props.content}}
 				/>
 			</DetailWrapper>
+			</div>
 		)
 	}
 

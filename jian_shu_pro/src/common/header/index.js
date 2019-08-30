@@ -68,11 +68,6 @@ class Header extends Component {
 					<Logo/>
 				</Link>
 				<Nav>
-					{
-						login ? 
-							<NavItem onClick={logout} className='right'>退出</NavItem> : 
-							<Link to='/login'><NavItem className='right'>登陆</NavItem></Link>
-					}
 					<SearchWrapper>
 						<CSSTransition
 							in={focused}
@@ -92,13 +87,20 @@ class Header extends Component {
 					</SearchWrapper>
 				</Nav>
 				<Addition>
+				{
+						login ? 
+							<NavItem onClick={logout} className='right'>退出</NavItem> : 
+							<Link to='/login'><NavItem className='right'>登陆</NavItem></Link>
+					}
+					<Link to='/write'>
+						<Button className='reg'>注册</Button>
+					</Link>
 					<Link to='/write'>
 						<Button className='writting'>
 							<i className="iconfont">&#xe615;</i>
 							写文章
 						</Button>
 					</Link>
-					<Button className='reg'>注册</Button>
 				</Addition>
 			</HeaderWrapper>
 		);

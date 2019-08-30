@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const HomeWrapper = styled.div`
+	width: 750px;
 	overflow: hidden;
-	width: 100%;
 	margin: 0 auto;
 `;
 
@@ -10,15 +10,14 @@ export const HomeLeft = styled.div`
 	float: left;
 	margin-left: 15px;
 	padding-top: 30px;
-	width: 625px;
+	width: 66.66667%;
 	.banner-img {
-		width: 625px;
-		height: 270px;
+		width: 100%;
 	}
 `;
 
 export const HomeRight = styled.div`
-	width: 280px;
+	width: 29.16667%;
 	float: right;
 `;
 
@@ -52,20 +51,23 @@ export const TopicItem = styled.div`
 
 export const ListItem = styled.div`
 	overflow: hidden;
+	position:relative;
 	padding: 20px 0;
 	border-bottom: 1px solid #dcdcdc;
 	.pic {
+		position:absolute;
+		right:0;
+		top:50%;
+		margin-top:-50px;
 		display: block;
 		width: 125px;
 		height: 100px;
-		float: right;
 		border-radius: 10px;
 	}
 `;
 
 export const ListInfo =	styled.div`
-	width: 500px;
-	float: left;
+  padding-right: 165px;
 	.title {
 		line-height: 27px;
 		font-size: 18px;
@@ -81,18 +83,17 @@ export const ListInfo =	styled.div`
 
 export const RecommendWrapper = styled.div`
 	margin: 30px 0;
-	width: 280px;
+	width: 100%;
+	.item-pic{
+		display:block;
+		width:100%;
+		padding-top:5px;
+	}
 `;
 
-export const RecommendItem = styled.div`
-	width: 280px;
-	height: 50px;
-	background: url(${(props) => props.imgUrl});
-	background-size: contain;
-`;
 
 export const WriterWrapper = styled.div`
-	width: 278px;
+	width: 100%;
 	border: 1px solid #dcdcdc;
 	border-radius: 3px;
 	height: 300px;
@@ -116,9 +117,9 @@ export const BackTop = styled.div`
 	position: fixed;
 	right: 100px;
 	bottom: 100px;
-	width: 60px;
-	height: 60px;
-	line-height: 60px;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
 	text-align: center;
 	border: 1px solid #ccc;
 	font-size: 14px;

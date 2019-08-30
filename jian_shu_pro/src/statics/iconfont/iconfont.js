@@ -18,9 +18,3 @@ injectGlobal`
     -moz-osx-font-smoothing: grayscale;
   }
 `;
-
-
-
-
-
-
